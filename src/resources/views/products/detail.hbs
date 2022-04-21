@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grind</title>
+    <link rel="stylesheet" href="/css/detail.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script>
+  function currentDiv(n) {
+    showDivs(slideIndex = n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+    }
+    x[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " w3-opacity-off";
+  }
+</script>
+
+    
+</head>
+<body>
+{{>header}}
+
+
+  <div class="container-fluid p_detail bg-light">
+    <div class="container">
+      <div class="row shadow">
+        <div class="col-lg-6 p-5 table-bordered bg-black-50">
+          <div class="w3-content" style="max-width:1200px">
+            <img class="mySlides w3-animate-left" src="../{{product.avatar}}" style="width:100%">
+            <img class="mySlides w3-animate-left" src="../{{product.galleryItem1}}" style="width:100%;display:none">
+            <img class="mySlides w3-animate-left" src="../{{product.galleryItem2}}" style="width:100%;display:none">
+            <img class="mySlides w3-animate-left" src="../{{product.galleryItem3}}" style="width:100%;display:none">
+
+            <div class="w3-row-padding w3-section">
+              <div class="w3-col s3">
+                <img class="demo w3-opacity w3-hover-opacity-off" src="../{{product.avatar}}" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+              </div>
+              <div class="w3-col s3">
+                <img class="demo w3-opacity w3-hover-opacity-off" src="../{{product.galleryItem1}}" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+              </div>
+              <div class="w3-col s3">
+                <img class="demo w3-opacity w3-hover-opacity-off" src="../{{product.galleryItem2}}" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+              </div>
+              <div class="w3-col s3">
+                <img class="demo w3-opacity w3-hover-opacity-off" src="../{{product.galleryItem3}}" style="width:100%;cursor:pointer" onclick="currentDiv(4)">
+              </div>
+               
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="col-lg-6 pt-5 table-bordered">
+        <!-- Nav tabs -->
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#home">THÔNG TIN SẢN PHẨM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#menu1">THÔNG SỐ KỸ THUẬT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#menu2">HƯỚNG DẪN SỬ DỤNG</a>
+            </li>
+          </ul>
+
+        <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane container active mt-3" id="home">
+              <h1 class=" font-weight-bold text-info">{{product.name}}</h1>
+              <div class="d-flex border-top pt-3 justify-content-between">
+                <div class="d-flex">
+                  <h4>Giá:</h4>
+                  <h4 class="text-danger pl-1">{{product.price}} đ</h4>
+                </div>
+                <button class="btn btn-info mr-1 d-flex mb-1">
+                  <a href="/me/add-to-cart/{{product._id}}" class="text-light">Add cart</a>
+                </button>
+              </div>
+              <div class="border-top">
+                <dl class="pt-3">
+                  <dt>Mô tả:</dt>
+                  <dd class="text-muted">
+                      {{product.description}}
+                  </dd>
+                </dl>
+              </div>
+            </div>
+            <div class="tab-pane container fade mt-3" id="menu1">
+              <ul class="p-3">
+                <li>{{product.digital}}</li>
+              </ul>
+            </div>
+            <div class="tab-pane container fade mt-3" id="menu2">
+              <p class="font-weight-bold">Lưu ý khi sử dụng máy:</p>
+
+              <p>{{product.tutorial}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{{>footer}}
+  <script src="/js/detail.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $('.autoplay').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+    });
+  </script>
+</body>
+</html>

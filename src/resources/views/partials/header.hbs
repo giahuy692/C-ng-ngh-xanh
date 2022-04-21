@@ -1,0 +1,92 @@
+<link
+	rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous"
+/>
+<link
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+/>
+<link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet" />
+<link
+	rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"
+/>
+<link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet" />
+<link rel="stylesheet" href="/css/header.css" />
+<link rel="icon" href="/images/logo/optiton4.png" type="image/x-icon">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+<div class="wrapper">
+	<nav>
+		<input type="checkbox" id="show-search" />
+		<input type="checkbox" id="show-menu" />
+		<label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+		<div class="content">
+			<div class="logo"><a href="/">GIA HUY</a></div>
+			<ul class="links">
+				<li><a href="/">TRANG CHỦ</a></li>
+				<li><a href="/gioithieu/">GIỚI THIỆU</a></li>
+				<li>
+					<a href="/product/" class="desktop-link">SẢN PHẨM</a>
+					<input type="checkbox" id="show-features" />
+					<label for="show-features">SẢN PHẨM</label>
+					<ul>
+						<li><a href="/product/">ĐIỆN NĂNG LƯỢNG MẶT TRỜI</a></li>
+						<li><a href="/product/">MÁY LỌC NƯỚC</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#" class="desktop-link">HỖ TRỢ</a>
+					<input type="checkbox" id="show-services" />
+					<label for="show-services">HỖ TRỢ</label>
+					<ul>
+						<li><a href="#">CHÍNH SÁCH BẢO HÀNH</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<label for="show-search" class="search-icon"><i
+					class="fas fa-search"
+				></i></label>
+			{{#if login}}
+				<div class="btn-group" style="z-index: 1000;">
+					<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+						My Account
+					</button>
+					<div class="dropdown-menu dropdown-menu-lg-right">
+						<a class="dropdown-item" href="/me/profile">Profile</a>
+						<a class="dropdown-item" href="/me/logout">Logout</a>
+					</div>
+				</div>
+			{{else}}
+				<div class="btn-group"  style="z-index: 1000;">
+					<button type="button" class="btn btn-outline-light dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-user"></i>
+					</button>
+					<div class="dropdown-menu dropdown-menu-lg-right">
+						<a class="dropdown-item" href="/me/login">Login</a>
+						<a class="dropdown-item" href="/me/register">Register</a>
+					</div>
+				</div>
+			{{/if}}
+		</div>
+		<form action="/search" class="search-box" method="GET">
+			<input
+				type="text"
+				name="key"
+				placeholder="Type Something to Search..."
+				required
+			/>
+			<button type="submit" class="go-icon"><i
+					class="fas fa-long-arrow-alt-right"
+				></i></button>
+		</form>
+		
+	</nav>
+</div>
+<!--End: Header-->

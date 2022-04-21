@@ -1,0 +1,69 @@
+
+	<link rel="stylesheet" href="../css/insert-product.css">
+
+{{>header-admin}}
+<div class="container-fluid p_reate">
+
+    <h3 class="title_create">Thêm sản phẩm</h3>
+
+    <div class="div_insert">
+        <form method="POST" action="/admin/store-products" enctype="multipart/form-data">
+            <label for="name" class="mt-2">Tên sản phẩm:</label>
+            <input class="input_text_insert" type="text" id="name" name="name">
+
+            <label for="category" class="mt-2">Danh mục:</label>
+            <input class="input_text_insert" type="text" id="category" name="category">
+            
+            <label for="price" class="mt-2">Giá:</label>
+            <input class="input_text_insert" type="text" id="price" name="price">
+
+            <label for="avatar" class="mt-2 d-block mb-1">Ảnh sản phẩm:</label>
+            <input type="file" id="avatar" name="avatar" >
+
+            <label for="images" class="mt-2 d-block mb-1">Thư viện ảnh sản phẩm:</label>
+            <input multiple="multiple" type="file" id="images" name="gallery" >
+
+            <br><br>
+            <label for="description" class="mt-2 d-block  mb-1">Mô tả:</label>
+            <textarea class="input_text_insert" type="text" id="description" name="description"></textarea>
+
+            <label for="digital" class="mt-2 d-block  mb-1">Thông số kỹ thuật:</label>
+            <textarea class="input_text_insert" type="text" id="digital" name="digital"></textarea>
+
+            <label for="tutorial" class="mt-2 d-block  mb-1">Hướng dẫn sử dụng:</label>
+            <textarea class="input_text_insert" type="text" id="tutorial" name="tutorial"></textarea>
+
+
+            <input class="input_submit_insert" type="submit" value="THÊM SẢN PHẨM">
+        </form>
+    </div>
+</div>
+{{>footer-admin}}
+<script src="../ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('tutorial',{
+        extraPlugins: 'filebrowser',
+        filebrowserBrowseUrl:'/list',//upload local
+        filebrowserUploadMethod:'form',
+        filebrowserUploadUrl:'/upload',//route
+
+    })
+</script>
+<script>
+    CKEDITOR.replace('digital',{
+        extraPlugins: 'filebrowser',
+        filebrowserBrowseUrl:'/list',//upload local
+        filebrowserUploadMethod:'form',
+        filebrowserUploadUrl:'/upload',//route
+
+    })
+</script>
+<script>
+    CKEDITOR.replace('description',{
+        extraPlugins: 'filebrowser',
+        filebrowserBrowseUrl:'/list',//upload local
+        filebrowserUploadMethod:'form',
+        filebrowserUploadUrl:'/upload',//route
+
+    })
+</script>

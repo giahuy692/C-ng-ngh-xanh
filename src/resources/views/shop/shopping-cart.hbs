@@ -1,0 +1,72 @@
+{{>header}}
+<link rel="stylesheet" href="/css/shoppingcart.css">
+{{#if products}}
+    <div style="margin-top:70px"></div>
+    <div class="">
+        <div class="container-fluid pt-5 pb-5">
+            <div class="container table-responsive-md">
+                <table class="table table-striped text-center">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Add</th>
+                        <th scope="col">Minus</th>
+                        <th scope="col">Remove All</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each products}}
+                            
+                            <tr>
+                                <th scope="row" class="lineheight">{{@index}}</th>
+                                <td><img id="avtaPro" class="rounded lineheight" src="../{{this.item.avatar}}" alt="" ></td>
+                                <td style="align-content: center;" class="lineheight">{{this.item.name}}</td>
+                                <td class="lineheight">{{this.qty}}</td>
+                                <td class="lineheight">{{this.price}}</td>
+                                <td class="center-parent">
+                                    <a href="/me/plus-to-cart/{{this.item._id}}" class="btn btn-outline-secondary center-me">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </td>
+                                <td class="center-parent">
+                                    <a href="/me/reduce/{{this.item._id}}" class="btn btn-outline-secondary center-me">
+                                        <i class="fa fa-minus"></i>
+                                    </a>
+                                </td>
+                                <td class="center-parent">
+                                    <a href="/me/remove/{{this.item._id}}" class="btn btn-outline-secondary center-me">
+                                        <i class="fa fa-minus" aria-hidden="true"></i> Remove All
+                                    </a>
+                                </td>
+                            </tr>
+                        {{/each}}
+                        <tr>
+                                <th scope="row"></th>
+                                <td></td>
+                                <td></td>
+                                <td><span class="font-weight-bold text-danger">Total:</span></td>
+                                <td>{{ totalPrice }}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                    </tbody>
+                </table>
+                 <a href="/me/checkout" class="btn btn-outline-primary float-right">Checkout</a>
+            </div>
+        </div>
+    </div>
+{{else}}
+    <div style="margin-top:70px"></div>
+        <h3 class="text-center pt-5 text-monospace display-4">let's go shopping</h3>
+    <div class="container pt-2 d-flex justify-content-center">
+        <lottie-player src="https://assets1.lottiefiles.com/private_files/lf30_x2lzmtdl.json"  background="transparent"  speed="1" class="" style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
+    </div>
+{{/if}}
+
+
+{{>footer}}

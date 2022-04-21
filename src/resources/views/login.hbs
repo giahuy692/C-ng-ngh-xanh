@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<link rel='stylesheet' href='/css/header.css' />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<div class='container mt-5 bg-light'>
+  <div class='row pb-5'>
+    <form class='container mt-5 my_con pr-5 pl-5 bg-light' method="post" action="/me/login" id="login-form">
+    <a href="/" class="btn btn-outline-secondary float-right"><i class="fa fa-arrow-left"></i> Back</a>
+      <h2 class='text-center text-danger mt-5 font-weight-bold mb-2'>
+        <img
+          src='../images/logo/optiton4.png'
+          alt=''
+          class='img-fluid'
+          style='width: 150px;'
+        />
+      </h2>
+      <div class='text-center text-secondary mb-4'>__________ _*_ __________</div>
+      <fieldset class='form-group'>
+        <label for='username' class='font-weight-bold'>TÊN ĐĂNG NHẬP</label>
+        <input type='text' class='form-control' id='username' placeholder='Nhập tài khoản...' name="username" />
+      </fieldset>
+      <fieldset class='form-group'>
+        <label for='inputPassword' class='font-weight-bold'>MẬT KHẨU</label>
+        <input
+          type='password'
+          class='form-control'
+          id='password'
+          placeholder='Nhập mật khẩu...'
+          name="password"
+        />
+      </fieldset>
+      {{>messages}}
+      <div  class="float-right">
+        <a
+          href="/me/register" class='btn btn-outline-dark text-center w_100bosen mb-5 mt-2'>Đăng Kí
+        </a>
+        <button
+          type='submit' class='btn btn-primary text-center w_100bosen mb-5 mt-2'>Đăng Nhập
+        </button>
+      <div>
+    </div>
+         <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    </form>
+  </div>
+</div>
+
+{{!-- 
+<script>
+  $(document).ready(function(){
+    $.get("http://localhost:4000/login", function(data, status){
+          $('#alert').html(data);
+   });
+   
+</script> --}}

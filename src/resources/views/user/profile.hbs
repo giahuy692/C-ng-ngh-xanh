@@ -1,0 +1,129 @@
+{{>header}}
+<link rel="stylesheet" href="../css/dashboard.css">
+<div style="margin-top: 70px;"></div>
+<div class="card text-white wrapper_gt1">
+    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_ISbOsd.json"  background="transparent"  speed="0.3"  style="width: 200px; height: 180px; margin: 0 auto;" autoplay loop  ></lottie-player>
+    <div class="card-img-overlay wrapper_ite m-5">
+        <h5 class="card-title text-center">My Account</h5>
+        <nav aria-label="breadcrumb" class="dis_flc">
+        <ol class="breadcrumb dis_flcite">
+            <li class="breadcrumb-item"><a href="/" class="txt_while">Home</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">My account</li>
+        </ol>
+        </nav>
+    </div>
+    </div>
+<div class="alert alert-secondary border-radius-0" role="alert">
+  <div class="container d-flex justify-content-between">
+    <h3 class=""><p class="d-inline text-success">Hello</p> {{ fullname }}</h3>
+    <div>
+        {{#if roles}}
+            <a href="/admin" class="btn btn-outline-secondary">Admin</a>
+        {{/if}}
+        <a href="/me/logout" class="btn btn-outline-secondary">Logout</a>
+    </div>
+  </div>
+</div>
+<div class="" style="margin: 0 60px;">
+    <div class="student-profile py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-transparent text-center">
+                        <img class="profile_img" src="/{{avatar}}" alt="student dp">
+                        <h3>{{ fullname }}</h3>
+                        <a href="/user/edit-profile/{{_id}}" class="btn btn-outline-secondary">Edit profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                <div class="card-header bg-transparent border-0">
+                    <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+                </div>
+                <div class="card-body pt-0">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th width="30%">Username</th>
+                            <td width="2%">:</td>
+                            <td>{{ username }}</td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Fullname</th>
+                            <td width="2%">:</td>
+                            <td>{{fullname}}</td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Phone	</th>
+                            <td width="2%">:</td>
+                            <td>{{phone}}</td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Email</th>
+                            <td width="2%">:</td>
+                            <td>{{email}}</td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Address</th>
+                            <td width="2%">:</td>
+                            <td>{{address}}</td>
+                        </tr>
+                        <tr>
+                            <th width="30%">Password</th>
+                            <td width="2%">:</td>
+                            <td>************</td>
+                            <td class="text-center">
+                                <a href="/user/change-pasword/{{_id}}" class="btn btn-outline-secondary btnchangePass"><i class="fa fa-edit"></i></a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+                <div style="height: 26px"></div>
+                <div class="card shadow-sm rounded">
+                    <button class="accordion">My order</button>
+                    <div class="panelW3 pt-4">
+                        {{#each orders }}
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <ul class="list-group">
+                                        {{#each this.items }}
+                                            <li class="list-group-item">
+                                                {{ this.item.name }} | {{ this.qty }} Units |
+                                                <span class="badge">{{ this.price }}</span>
+                                            </li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <div class="panel-footer pt-2">
+                                    <strong>- Total Price: {{this._doc.cart.totalPrice}}VND</strong>
+                                </div>
+                            </div>
+                            <hr>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    var panelW3 = this.nextElementSibling;
+    if (panelW3.style.display === "block") {
+      panelW3.style.display = "none";
+    } else {
+      panelW3.style.display = "block";
+    }
+  });
+}
+</script>
+{{>footer}}

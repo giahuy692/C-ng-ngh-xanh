@@ -1,0 +1,213 @@
+    <link rel="stylesheet" href="/css/sanpham.css">
+
+
+{{>header}}
+<div class="container-fluid top_menu"></div>
+<div class="filter"> 
+  <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#mobile-filter" aria-expanded="true" aria-controls="mobile-filter">Filters
+    <span class="fa fa-filter pl-1"></span>
+  </button>
+</div>
+<div id="mobile-filter">
+    <p class="pl-sm-0 pl-2"> Home | <b>All Breads</b></p>
+    <div class="border-bottom pb-2 ml-2">
+        <h4 id="burgundy">Filters</h4>
+    </div>
+    <div class="py-2 border-bottom ml-3">
+        <h6 class="font-weight-bold h6SPin">Categories</h6>
+        <div id="orange">
+          <span class="fa fa-minus"></span>
+        </div>
+        <form>
+            <div class="form-group forgroup"> 
+              <input type="checkbox" id="artisan"> 
+              <label class="lalSPin" for="artisan">Fresh Artisan Breads</label> 
+            </div>
+            <div class="form-group forgroup"> 
+              <input type="checkbox" id="breakfast"> 
+              <label class="lalSPin" for="breakfast">Breakfast Breads</label> 
+            </div>
+            <div class="form-group forgroup"> 
+              <input type="checkbox" id="healthy"> 
+              <label class="lalSPin" for="healthy">Healthy Breads</label> 
+            </div>
+        </form>
+    </div>
+    <div class="py-2 border-bottom ml-3">
+        <h6 class="h6SPin font-weight-bold">Accompainments</h6>
+        <div id="orange">
+          <span class="fa fa-minus"></span>
+        </div>
+        <form>
+            <div class="form-group forgroup"> 
+              <input type="checkbox" id="tea"> 
+              <label class="lalSPin" for="tea">Tea Cakes</label> 
+            </div>
+            <div class="form-group forgroup"> 
+              <input type="checkbox" id="cookies"> 
+              <label class="lalSPin" for="cookies forgroup">Cookies</label> 
+            </div>
+            <div class="form-group forgroup"> 
+              <input type="checkbox" id="pastries"> 
+              <label class="lalSPin" for="pastries">Pastries</label> 
+            </div>
+            <div class="form-group forgroup"> 
+              <input type="checkbox" id="dough"> 
+              <label class="lalSPin" for="dough forgroup">Cookie Dough</label> 
+            </div>
+            <div class="form-group forgroup"> 
+              <input type="checkbox forgroup" id="choco"> 
+              <label class="lalSPin" for="choco forgroup">Chocolates</label> 
+            </div>
+        </form>
+    </div>
+    <div class="py-2 ml-3">
+        <h6 class="h6SPin font-weight-bold ">Top Offers</h6>
+        <div id="orange">
+          <span class="fa fa-minus"></span>
+        </div>
+        <form>
+            <div class="form-group forgroup"> 
+              <input type="checkbox" id="25off"> 
+              <label class="lalSPin" for="25">25% off</label> 
+            </div>
+            <div class="form-group forgroup"> 
+              <input type="checkbox" id="5off"> 
+              <label class="lalSPin" for="5off" id="off">5% off on artisan breads</label> 
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Sidebar filter section -->
+<section id="sidebar" class="">
+    <p> TRANG CHỦ | <b>SẢN PHẨM</b></p>
+    <div class="border-bottom pb-2 ml-2">
+        <h4 id="burgundy" class="color_po">DANH MỤC SẢN PHẨM</h4>
+    </div>
+    <div class="py-2 border-bottom ml-3">
+        <h6 class="h6SPin font-weight-bold">Máy lọc nước</h6>
+        <div id="orange">
+          <span class="fa fa-minus"></span>
+        </div>
+        <form>
+            <div class="form-group forgroup"> 
+              <label class="lalSPin" for="artisan">
+                <a href="#" class="hover_color text-dark">Máy lọc nước thông minh</a>
+              </label> 
+            </div>
+            <div class="form-group forgroup"> 
+              <label class="lalSPin" for="breakfast">
+                <a href="#" class="hover_color text-dark">Máy lọc nước nóng lạnh</a>
+              </label> 
+            </div>
+            <div class="form-group forgroup"> 
+              <label class="lalSPin" for="healthy">
+                <a href="#" class="hover_color text-dark">Máy lọc nước gia đình</a>
+              </label> 
+            </div>
+            <div class="form-group forgroup"> 
+              <label class="lalSPin" for="healthy">
+                <a href="#" class="hover_color text-dark">Máy lọc nước công suất lớn</a>
+              </label> 
+            </div>
+            <div class="form-group forgroup"> 
+              <label class="lalSPin" for="healthy">
+                <a href="#" class="hover_color text-dark">Máy lọc nước Hydrogen</a>
+              </label> 
+            </div>
+        </form>
+    </div>
+    <div class="py-2 border-bottom ml-3">
+        <h6 class="h6SPin font-weight-bold">Điện năng lượng mặt trời</h6>
+        <div id="orange">
+          <span class="fa fa-minus"></span>
+        </div>
+        <form>
+            <div class="form-group forgroup"> 
+              <label class="lalSPin" for="healthy">
+                <a href="#" class="hover_color text-dark">Máy nước nóng NLMT</a>
+              </label> 
+            </div>
+
+        </form>
+    </div>
+    <!--<div class="py-2 ml-3">
+        <h6 class="h6SPin font-weight-bold">Top Offers</h6>
+        <div id="orange">
+          <span class="fa fa-minus"></span>
+        </div>
+        <form>
+            <div class="form-group forgroup"> 
+              <input type="checkbox" id="25off"> 
+              <label class="lalSPin" for="25">25% off</label> 
+            </div>
+            <div class="form-group forgroup"> 
+              <input type="checkbox" id="5off"> 
+              <label class="lalSPin" for="5off" id="off">5% off on artisan breads</label> 
+            </div>
+        </form>
+    </div>-->
+</section>
+<!-- products section -->
+<section id="products" class="mt-3">
+    <div class="container">
+        <div class="d-flex flex-row mt-4 mb-4">
+            <div class="text-muted m-2" id="res"></div>
+            <div class="ml-auto mr-lg-4">
+                <div id="sorting" class="border rounded p-1 m-1"> 
+                  <span class="text-muted">Hiển thị một kết quả duy nhất</span> 
+                  <select name="sort" id="sort" class="selectSP">
+                    <option value="popularity"><b>Thứ tự theo giá: thấp đến cao</b></option>
+                    <option value="prcie"><b>Thứ tự theo giá: cao xuống thấp</b></option>
+                  </select> 
+                  </div>
+            </div>
+        </div>
+        
+        <div class="row pt-3">
+          {{#each product}}
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-3">
+                <div class="card p-2 card_podu shadow">
+                  <div class="text-center"> <img src="/{{this.avatar}}" class="img-fluid" width="200" /> </div>
+                  <div class="content">
+                      <div class="d-flex justify-content-between align-items-center"> 
+                        <span class="category">{{this.category}}</span> 
+                        <span class="price">{{this.price}}</span> 
+                      </div>
+                      <p>{{this.name}}</p>
+                      <div class="buttons d-flex justify-content-center"> 
+                        <button class="btn btn-dark mr-1">
+                          <a href="/products/{{this.slug}}" class="text-light">Xem chi tiết</a>
+                        </button> 
+                        <!--<button class="btn btn-primary">Add to cart</button> -->
+                      </div>
+                  </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+<div class="clearfix"></div>
+<!--Pagination-->
+<nav aria-label="Page navigation example" class="pagi_sp">
+  <ul class="pagination justify-content-end">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
+<!--******************************************-->
+
+
+<div class="border-bottom mt-4"></div>
+
+{{>footer}}

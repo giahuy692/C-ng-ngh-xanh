@@ -1,0 +1,50 @@
+#details-store {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  padding-top: 0;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr;
+}
+
+.details-admin .recentOders .table_store_product tbody a:link,
+.details-admin .recentOders .table_store_product tbody a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid green;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.details-admin .recentOders .table_store_product tbody a:hover,
+.details-admin .recentOders .table_store_product tbody a:active {
+  background-color: green;
+  color: white;
+}
+
+.table_store_product {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table_store_product td,
+.table_store_product th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+.tr_store_product:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.details-admin .recentOders .table_store_product .tr_store_product td:nth-child(2) {
+  text-align: left;
+  padding-left: 15px;
+}
+
+/*# sourceMappingURL=store-product.css.map */

@@ -1,0 +1,163 @@
+    <link rel="stylesheet" href="/css/style.css"> 
+  {{>header}}
+
+  <!--End: Header-->
+  <div id="carouselExampleIndicators" class="carousel slide banner_index" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/banner/bếp-điện-từ-kangaroo-2021.jpg" class="d-block w-100" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="images/banner/Máy-lọc-nước-phải-là-Hydrogen.jpg" class="d-block w-100" alt="">
+      </div>
+      <div class="carousel-item">
+        <img src="images/banner/Điều-hòa-không-khí-Kangaroo-Banner.jpg" class="d-block w-100" alt="">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <!--End: banner-->
+
+  <div class="container-fluid idiv">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="tongbo1">
+          <div class="icheckmark"><i class="fas fa-shield-alt"></i></div>
+          <div class="subi">
+            <span class="teidiv">Chất lượng tốt nhất</span>
+            <span class="spidiv">Chuyên bán lẻ các dụng cụ, thiết bị văn phòng.</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-3 col-md-6">
+        <div class="tongbo1">
+          <div class="icheckmark"><i class="fas fa-hand-holding-usd"></i></div>
+          <div class="subi">
+            <span class="teidiv">Giá cả phù hợp</span>
+            <span class="spidiv">Chuyên bán lẻ các dụng cụ, thiết bị văn phòng.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="tongbo1">
+          <div class="icheckmark"><i class="fab fa-hive"></i></div>
+          <div class="subi">
+            <span class="teidiv">Sản phẩm đa dạng</span>
+            <span class="spidiv">Chuyên bán lẻ các dụng cụ, thiết bị văn phòng.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="tongbo1">
+          <div class="icheckmark"><i class="fas fa-leaf"></i></div>
+          <div class="subi">
+            <span class="teidiv">Thân thiện môi trường</span>
+            <span class="spidiv">Chuyên bán lẻ các dụng cụ, thiết bị văn phòng.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Product-->
+
+  <div class="container mt-5 mb-5">
+    <div class="tearea">
+      <h3 class="h3pos">MÁY NƯỚC NÓNG</h3>
+      <a href="/product/" class="seeall link_menu">Xem tất cả</a>
+    </div>
+    <div class="row g-2" id="content">
+        {{#each productD1}}
+          <div class="col-md-3 d-flex justify-content-center ">
+              <div class="card p-2 card_podu shadow">
+                  <div class="text-center"> <img src="/{{this.avatar}}" alt="{{this.name}}" class="img-fluid" width="200" /> </div>
+                  <div class="content">
+                      <div class="d-flex justify-content-between align-items-center"> <span class="category">{{this.category}}</span> 
+                      <span class="price">{{this.price}}</span> </div>
+                      <p>{{this.name}}</p>
+                      <div class="buttons d-flex justify-content-center"> 
+                        <button class="btn btn-dark mr-1 d-flex justify-content-center">
+                          <a href="/products/{{this.slug}}" class="text-light">Xem chi tiết</a>
+                        </button> 
+                        <button class="btn btn-info mr-1 d-flex justify-content-center">
+                          <a href="/me/add-to-cart/{{this._id}}" class="text-light">Add cart</a>
+                        </button> 
+                        <!--<button class="btn btn-primary">Add to cart</button> -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+        {{/each}}
+    </div>
+</div>
+
+<!----------------------------------------------------------------------->
+
+<div class="container mt-5 mb-5">
+    <div class="tearea">
+      <h3 class="h3pos">MÁY LỌC NƯỚC</h3>
+      <a href="/product/" class="seeall link_menu">Xem tất cả</a>
+    </div>
+      <div class="row g-2">
+        {{#each product}}
+          <div class="col-md-3 d-flex justify-content-center ">
+              <div class="card p-2 card_podu shadow">
+                  <div class="text-center"> <img src="/{{this.avatar}}" alt="{{this.name}}" class="img-fluid" width="200" /> </div>
+                  <div class="content">
+                      <div class="d-flex justify-content-between align-items-center"> <span class="category">{{this.category}}</span> <span class="price">{{this.price}}</span> </div>
+                      <p>{{this.name}}</p>
+                      <div class="buttons d-flex justify-content-center"> 
+                        <button class="btn btn-dark mr-1 d-flex justify-content-center">
+                          <a href="/products/{{this.slug}}" class="text-light">Xem chi tiết</a>
+                        </button> 
+                        <button class="btn btn-info mr-1 d-flex justify-content-center">
+                          <a href="/me/add-to-cart/{{this._id}}" class="text-light">Add cart</a>
+                        </button> 
+                        <!--<button class="btn btn-primary">Add to cart</button> -->
+                      </div>
+                  </div>
+              </div>
+          </div>
+        {{/each}}
+      </div>
+  </div>
+
+
+
+
+
+<!--**********************************-->
+  <div class="container-fluid banner_1">
+    <div class="row p-lg-5">
+      <div class="col-lg-5 col-md-12 col-sm-12 mobi_banner1">
+        <lottie-player class="img_1" src="https://assets2.lottiefiles.com/packages/lf20_fcqkht5y.json"  background="transparent"  speed="1"  style="width: 740px; height: 300px;"  loop  autoplay></lottie-player>
+      </div>
+      <div class="col-lg-7 col-md-12 text-md-center mb_banner1">
+        <h2 class="teba1">CUNG CẤP TRỌN BỘ DỊCH VỤ CỦA CHÚNG TÔI VỚI GIÁ ƯU ĐÃI</h2>
+        <span class="btn btn-light btn_banner1">075 7842 045</span>
+      </div>
+    </div>
+  </div>
+
+
+
+<!--Footer-->
+{{>footer}}
+
+
+

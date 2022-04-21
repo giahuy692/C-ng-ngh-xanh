@@ -1,0 +1,20 @@
+.lineheight{
+    line-height: 150px !important;
+
+}
+
+//canh giua hang doc
+.center-parent {
+    position: relative;
+}
+
+.center-me {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#avtaPro{
+    width: 150px;
+}

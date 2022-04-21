@@ -1,0 +1,71 @@
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/insert-product.css">
+	<link rel="stylesheet" href="../../css/admin.css">
+
+{{>header-admin}}
+<div class="container-fluid p_reate">
+
+    <h3 class="title_create">Cập nhật tai khoan</h3>
+
+    <div class="div_insert">
+        <form method="POST" action="/admin/upAccount/{{account._id}}?_method=PUT">
+            {{#if (isdefined errors)}}
+                {{#each errors}}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Holy guacamole!</strong> {{this.msg}}.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {{/each}}   
+            {{/if}}
+            {{#if (isnull error)}}
+                {{#each error}}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{this}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                {{/each}}  
+            {{/if}}
+            <label for="changePassword">Mật khẩu:</label>
+            <input class="input_text_insert" type="text" id="changePassword" name="changePassword" placeholder="Password should be at least 6 characters">
+
+            <label for="roles">Quyền hạn:</label>
+            <input class="input_text_insert" type="text" id="roles" name="roles" value="{{#if account.roles}}admin{{else}}user{{/if}}"> 
+        
+            <input class="input_submit_insert" type="submit" value="CẬP NHẬT">
+        </form>
+    </div>
+</div>
+{{>footer-admin}}
+<script src="../../ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('tutorial',{
+        extraPlugins: 'filebrowser',
+        filebrowserBrowseUrl:'/list',//upload local
+        filebrowserUploadMethod:'form',
+        filebrowserUploadUrl:'/upload',//route
+
+    })
+</script>
+<script>
+    CKEDITOR.replace('digital',{
+        extraPlugins: 'filebrowser',
+        filebrowserBrowseUrl:'/list',//upload local
+        filebrowserUploadMethod:'form',
+        filebrowserUploadUrl:'/upload',//route
+
+    })
+</script>
+<script>
+    CKEDITOR.replace('description',{
+        extraPlugins: 'filebrowser',
+        filebrowserBrowseUrl:'/list',//upload local
+        filebrowserUploadMethod:'form',
+        filebrowserUploadUrl:'/upload',//route
+
+    })
+</script>

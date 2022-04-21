@@ -1,0 +1,152 @@
+    <link rel="stylesheet" href="/css/store-product.css"> 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{{>header-admin}}
+
+		{{!-- <div class="cardBox">
+			<div class="card-admin">
+				<div>
+					<div class="numbers-admin">1,042</div>
+					<div class="cardName">Daily Views</div>
+				</div>
+				<div class="iconBox">
+					<i class="fa fa-eye" aria-hidden="true"></i>
+				</div>
+			</div>
+			
+			<div class="card-admin">
+				<div>
+					<div class="numbers-admin">80</div>
+					<div class="cardName">Sales</div>
+				</div>
+				<div class="iconBox">
+					<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+				</div>
+			</div>
+
+			
+			<div class="card-admin">
+				<div>
+					<div class="numbers-admin">208</div>
+					<div class="cardName">Comments</div>
+				</div>
+				<div class="iconBox">
+					<i class="fa fa-comment" aria-hidden="true"></i>
+				</div>
+			</div>
+
+			<div class="card-admin">
+				<div>
+					<div class="numbers-admin">$6,042</div>
+					<div class="cardName">Earning</div>
+				</div>
+				<div class="iconBox">
+					<i class="fa fa-usd" aria-hidden="true"></i>
+				</div>
+			</div>
+		</div> --}}
+
+        <div class="details-admin" id="details-store" style="margin-top: 50px;">
+            <div class="recentOders">
+                <div class="cardHeader">
+                    <h2>List Product</h2>
+                    <a href="/admin/create" class="btn-detail-admin"><i class="fa fa-plus" aria-hidden="true"></i> Thêm sản phẩm</a>
+                </div>
+                <table class="table_store_product">
+                    <thead>
+                        <tr class="tr_store_product">
+                            <th>STT</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>    
+                            <th>Ngày Tạo</th>
+                            <th>Ngày cập nhật</th>
+                            <th>Sửa</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        {{#each product}}
+
+                            <tr class="tr_store_product">
+                                <td>{{sum @index 1}}</td>    
+                                <td>{{this.name}}</td>
+                                <td>{{this.price}}</td>
+                                <td>{{this.createdAt}}</td>
+                                <td>{{this.updatedAt}}</td>
+                                <td>
+                                    <a href="/admin/edit-product/{{this._id}}">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                </td> 
+                                <td>
+                                    <a href="" data-id="{{this._id}}" data-toggle="modal" data-target="#delete_product">
+                                        <i class="fa fa-eraser"></i>
+                                    </a>
+                                </td>   
+                            </tr>
+                    
+                        {{/each}}
+                    </tbody>
+                    
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="delete_product" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Xóa sản phẩm</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <p class="text-center display-5 font-weight-bold text-danger">Bạn có thật sự muốn xóa không ?</p>
+                <div class="">
+                    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_gixvd2z7.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: 0 auto;"  loop  autoplay></lottie-player>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button id="btn-delete-product" type="button" class="btn btn-danger">Xóa bỏ</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Delete hidden form  --}}
+    <form method="POST" name="delete-course-form"></form>
+{{>footer-admin}}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+
+        var productId;
+
+        var deleteForm = document.forms['delete-course-form'];
+
+        var bntDeleteProduct = document.getElementById('btn-delete-product');
+        // when dialog confirn 
+        $('#delete_product').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) ;
+            productId = button.data('id') ;
+        });
+
+        bntDeleteProduct.onclick = function(){
+            deleteForm.action = '/admin/' + productId + '?_method=DELETE';
+            deleteForm.submit();
+        }
+    });
+    
+</script>

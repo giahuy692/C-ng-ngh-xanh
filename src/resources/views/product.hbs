@@ -1,0 +1,87 @@
+    <link rel="stylesheet" href="/css/sanpham.css">
+
+
+
+{{>header}}
+<div class="container-fluid top_menu"></div>
+
+<div class="card text-white wrapper_gt1 border-radius-0">
+  <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_ISbOsd.json"  background="transparent"  speed="0.3"  style="width: 200px; height: 180px; margin: 0 auto;" autoplay loop  ></lottie-player>
+  <div class="card-img-overlay wrapper_ite m-5">
+    <h5 class="card-title text-center">Wellcome to product</h5>
+    <nav aria-label="breadcrumb" class="dis_flc">
+      <ol class="breadcrumb dis_flcite">
+          <li class="breadcrumb-item"><a href="/" class="txt_while">TRANG CHỦ</a></li>
+          <li class="breadcrumb-item active text-white" aria-current="page">PRODUCT</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<section id="products" class="mt-3">
+    <div class="container">
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+            ---
+          </button>
+          <div class="float-right">
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+              <button class="dropdown-item" type="button"><a href="/product?sort=1">Sắp xếp giá: tăng dần</a></button>
+              <button class="dropdown-item" type="button"><a href="/product?sort=-1">Sắp xếp giá: giảm dần</a></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row pt-3">
+          {{#each product}} 
+            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1 mb-3">
+                <div class="card p-2 card_podu shadow">
+                  <div class="text-center"> <img src="/{{this.avatar}}" class="img-fluid" width="200" /> </div>
+                  <div class="content">
+                      <div class="d-flex justify-content-between align-items-center"> 
+                        <span class="category">{{this.category}}</span> 
+                        <span class="price">{{this.price}}</span> 
+                      </div>
+                      <p>{{this.name}}</p>
+                      <div class="buttons d-flex justify-content-center"> 
+                        <button class="btn btn-dark mr-1 d-flex justify-content-center">
+                          <a href="/products/{{this.slug}}" class="text-light">Xem chi tiết</a>
+                        </button> 
+                        <button class="btn btn-info mr-1 d-flex justify-content-center">
+                          <a href="/me/add-to-cart/{{this._id}}" class="text-light">Add cart</a>
+                        </button> 
+                        <!--<button class="btn btn-primary">Add to cart</button> -->
+                      </div>
+                  </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+<div class="clearfix"></div>
+<!--Pagination-->
+<nav aria-label="Page navigation example" class="pagi_sp">
+  <ul class="pagination justify-content-end">
+    <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="/product?page=1&sort={{sort}}">1</a></li>
+    <li class="page-item"><a class="page-link" href="/product?page=2&sort={{sort}}">2</a></li>
+    <li class="page-item"><a class="page-link" href="/product?page=3&sort={{sort}}">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+
+
+<!--******************************************-->
+
+
+{{!-- <div class="border-bottom mt-4"></div> --}}
+
+
+
+{{>footer}}

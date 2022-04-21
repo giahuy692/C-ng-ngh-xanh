@@ -1,0 +1,25 @@
+	<link rel="stylesheet" href="../../css/admin.css">
+	<link rel="stylesheet" href="../../css/detailbill.css">
+{{>header-admin}}
+<div id="order-detail-wrapper">
+    <div id="order-detail">
+        <h1 class="mb_1">Chi tiết đơn hàng</h1>
+        <label style="font-weight: bold;">Người nhận: </label><span> {{orders.fullname}}</span><br/>
+        <label style="font-weight: bold;">Điện thoại: </label><span> {{orders.phone}}</span><br/>
+        <label style="font-weight: bold;">Địa chỉ: </label><span> {{orders.address}}</span><br/>
+        <hr class="mt_1 mb_1">
+        <h3>Danh sách sản phẩm</h3>
+        <ul style="margin: 0;padding: 0;" class="mb_1">
+            {{#each orders.cart.items}}
+                <li style="list-style: none;">
+                    <span class="item-name">{{this.item.name}}</span>
+                    <span class="item-quantity"> - SL: {{this.qty}} sản phẩm</span>
+                </li>
+            {{/each}}
+        </ul>
+        <hr class="mb_1">
+        <label style="font-weight: bold;">Tổng SL:</label> {{orders.cart.totalQty}} - <label style="font-weight: bold;">Tổng tiền:</label> {{orders.cart.totalPrice}}đ
+    </div>
+</div>
+
+{{>footer-admin}}
