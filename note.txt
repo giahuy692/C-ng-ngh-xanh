@@ -1,0 +1,4 @@
+Sau khi clone về mấy project này nếu chưa có mongoDb,nodejs thì phải mới chạy đuọc nhé
+Muốn chạy website: npm start
+Muốn css cho website: npm run watch và code vào scss
+Muón chỉnh database thì vào thu mục confgi/db/index.js
